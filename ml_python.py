@@ -112,7 +112,7 @@ def get_recommendation_desc(description) :
         print('Sorry there is no description. please write a real description')
 
     df4['rate'] = df4['rating'].astype(str)
-    temp = df4
+    temp = df4.iloc[:1000]
     list_desc = list(temp['Description'])
     list_desc.append(description)#######
     embedding = model.encode(list_desc)
