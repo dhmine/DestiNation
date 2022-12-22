@@ -113,7 +113,7 @@ def get_recommendation_desc(description) :
 
     df4['rate'] = df4['rating'].astype(str)
     df = df4.dropna(subset = ['lon', 'lat'])
-    temp = df
+    temp = df.iloc[:1000]
     list_desc = list(temp['Description'])
     list_desc.append(description)#######
     embedding = model.encode(list_desc)
