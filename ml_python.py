@@ -198,17 +198,18 @@ if choice == 'Description':
 if choice == 'Hotel Amenities':
     selected_options = st.multiselect('Which amenity do you ?',all_amenities)
     selected_options = ' '.join(selected_options)
-    form = st.form(key='sentiment-form1')
-    user_input = form.text_area('Where do you want your hotel?')
-    submit = form.form_submit_button('Click')
-    if submit:
-        result = requirementbased(df4, user_input, selected_options)
-        st.write(result)
-        try : 
-            #st.map(result)
-            create_map(result)
-        except ValueError :
-            print('error')
+    if selected_options :
+        form = st.form(key='sentiment-form1')
+        user_input = form.text_area('Where do you want your hotel?')
+        submit = form.form_submit_button('Click')
+        if submit:
+            result = requirementbased(df4, user_input, selected_options)
+            st.write(result)
+            try : 
+                #st.map(result)
+                create_map(result)
+            except ValueError :
+                print('error')
 
 
 
