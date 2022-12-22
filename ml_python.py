@@ -123,7 +123,7 @@ def get_recommendation_desc(description) :
     temp['similarity'] = similarity
     temp = temp.sort_values(by='similarity', ascending=False)
     temp = temp.dropna(subset = ['lon', 'lat'])
-    return temp[temp['similarity'] >= 0.5 ][['name','address','rate', 'number', 'City', 'lat', 'lon', 'similarity']]
+    return temp[temp['similarity'] >= 0.5 ][['name','address','rate', 'description', 'lat', 'lon','similarity']]
 
 
 def requirementbased(df, city,description):
