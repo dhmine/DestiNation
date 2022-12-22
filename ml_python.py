@@ -57,6 +57,7 @@ from nltk.tokenize import word_tokenize
 import nltk
 from nltk.stem.wordnet import WordNetLemmatizer
 nltk.download('punkt')
+nltk.download('stopwords')
 
 ######################################################## html styling ###########################################################
 #call streamlit
